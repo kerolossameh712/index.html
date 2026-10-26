@@ -65,3 +65,17 @@ button.on{background:var(--lv);color:#1b1300;font-weight:800}
 .conf{position:fixed;top:-12px;width:9px;height:14px;border-radius:2px;z-index:9;pointer-events:none;animation:fall 2.2s ease-in forwards}
 @keyframes fall{to{transform:translateY(105vh) rotate(720deg);opacity:.8}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+select{font:inherit;color:var(--tx);background:var(--in);border:1px solid transparent;border-radius:12px;padding:9px;width:100%}
+input[type=text]{text-align:right}
+.tip{margin-top:12px;padding:10px 12px;border-radius:12px;background:var(--in);font-size:13.5px;line-height:1.6}
+details summary.s2::after{content:"⌄"}
+.hr{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 8px;border-radius:14px;cursor:pointer;transition:background .2s,transform .15s}
+.hr:hover{background:var(--in)}.hr:active{transform:scale(.98)}
+.hr>div{flex:1;min-width:0}.hr b{font-size:14px;display:block}.hr small{color:var(--mut);font-size:12px}
+.df{font-weight:800;font-size:16px;flex:none}.df.ok,.bal.ok{color:var(--ok)}.df.bad,.bal.bad{color:var(--bad)}
+.bal{font-weight:800;margin:10px 0 4px}.mut{color:var(--mut);font-size:13px}
+.tools{display:flex;gap:8px;flex-wrap:wrap}.tools button{flex:1;min-width:110px}
+#toast{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom,0px));left:50%;transform:translate(-50%,30px);background:#1b1f33;color:#fff;padding:10px 16px;border-radius:999px;font-size:14px;opacity:0;transition:.3s;z-index:20;pointer-events:none}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+.day.off{opacity:.7}
