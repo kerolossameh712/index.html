@@ -73,3 +73,5 @@ function stats(){
   $("warn").textContent=lv>cfg.allow?"⚠️ أخدت "+(lv-cfg.allow)+" إجازة زيادة عن المسموح ومش محسوبة من الساعات.":"";
 }
 init();
+
+if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{})})}
