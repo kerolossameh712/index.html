@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ساعات الشغل | كيرلس سامح عيد</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#6d5efc">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg"><i></i><i></i><i></i></div>
+<div class="wrap">
+  <div class="hero">
+    <div class="who"><div class="av" id="avl">ك</div><div><small>الموظف</small><h1 id="nm">كيرلس سامح عيد</h1></div></div>
+    <div class="chip" id="range"></div>
+    <button class="hb" id="bTheme" aria-label="theme">🌓</button>
+  </div>
+
+  <div class="card" style="animation-delay:.1s">
+    <div class="ringbox">
+      <div class="ring">
+        <svg viewBox="0 0 120 120"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d5efc"/><stop offset="1" stop-color="#14b8a6"/></linearGradient></defs><circle class="tr" cx="60" cy="60" r="52"/><circle class="pg" id="pg" cx="60" cy="60" r="52"/></svg>
+        <b id="pct">0%</b>
+      </div>
+      <div class="res" id="res"></div>
+    </div>
+    <div class="grid">
+      <div class="st"><span>الساعات المطلوبة</span><b id="req">0</b></div>
+      <div class="st"><span>اللي اشتغلته (بالإجازات)</span><b id="work">0</b></div>
+      <div class="st"><span>الإجازات</span><b id="lvu">0</b></div>
+      <div class="st"><span>الأيام المسجلة</span><b id="rec">0</b></div>
+    </div>
+    <div class="tip" id="tip"></div>
+    <div class="warn" id="warn"></div>
+  </div>
+
+  <div class="card" style="animation-delay:.2s">
+    <details>
+      <summary>الإعدادات</summary>
+      <div class="set">
+        <label class="ck" style="flex-direction:column;align-items:stretch"><span>اسم الموظف</span><input type="text" id="name"></label>
+        <label>الإجازة الأسبوعية<select id="wk"><option value="0">من غير</option><option value="5">الجمعة</option><option value="56">الجمعة والسبت</option></select></label>
+        <label>الفترة بتبدأ في شهر<input type="month" id="month"></label>
+        <label>ساعات اليوم<input type="number" id="target" min="1" step="0.5"></label>
+        <label>أيام الإجازة<input type="number" id="allow" min="0"></label>
+        <label>يبدأ يوم<input type="number" id="start" min="1" max="31"></label>
+        <label>وينتهي يوم<input type="number" id="end" min="1" max="31"></label>
+        <div class="mut" style="min-width:100%">لو يوم النهاية أصغر من البداية أو يساويها، الفترة بتخلص في الشهر اللي بعده. مثال: 26 ← 25، أو 26 ← 26.</div>
+        <label>الاستراحة اليومية (دقيقة)<input type="number" id="brk" min="0"></label>
+        <label>سعر الساعة (اختياري)<input type="number" id="rate" min="0" step="any"></label>
+        
+      </div>
+    </details>
+  </div>
+
+  <div class="card" style="animation-delay:.15s"><div class="punch"><div><small class="mut">⏱️ بصمة اليوم</small><b id="pt">--:--:--</b></div><button id="bPunch" class="pb">▶️ سجّل دخول</button></div></div>
+  <div class="card" style="animation-delay:.25s"><details open><summary class="s2">📊 الشهور اللي فاتت</summary><div id="hist"></div></details></div>
+  <div class="card" id="days" style="animation-delay:.3s"></div>
+  <div class="card"><div class="tools"><button id="bShare">📤 نسخ ملخص الفترة</button><button id="bExp">💾 نسخة احتياطية</button><button id="bImp">📥 استرجاع</button><button id="bPrint">🖨️ طباعة / PDF</button></div><input type="file" id="fImp" accept=".json" hidden></div>
+  <div id="toast"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
